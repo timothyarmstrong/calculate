@@ -1,0 +1,257 @@
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* STYLE */
+
+body {
+    background:black;
+}
+
+#calculator {
+    background:#262626;
+    width:1024px;
+    height:600px;
+    margin:0 auto;
+}
+
+#screen {    
+    background:-webkit-gradient(linear, left top, left bottom, from(#354a68), color-stop(30%, #1b2541), color-stop(33%, #050c28), to(#202f4f));
+    border-radius:4px;
+    -webkit-box-shadow:0 0 5px rgba(0,0,0,0.4),inset 0 1px 0 #59697f, 0 1px 0 #555;
+    border:1px solid #000;
+    padding: 0 10px;
+}
+
+#screen #top, #screen #bottom {
+    color:#47b2fe;
+    text-shadow:0 0 5px rgba(71, 178, 254, 0.5);
+    font-family:arial, sans-serif;
+    font-weight:bold;
+    text-align:right;
+}
+
+#screen #top {
+    font-size:22px;
+    height:30px;
+    line-height:30px;
+    text-align:right;
+    padding-right:10px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    vertical-align:bottom;
+}
+
+#screen #top sup {
+    vertical-align:super;
+    font-size:12px;
+}
+
+#screen #bottom {
+    font-size:70px;
+    /*font-family:"Digital-7 Mono";*/
+    font-weight:normal!important;
+    font-family:"Courier New", monospace;
+    position:relative;
+    letter-spacing:4px;
+}
+
+/*#screen #bottom:before {
+    content:"-888888888888888";
+    position:absolute;
+    top:0;
+    right:0;
+    height:100%;
+    width:100%;
+    opacity:0.2;
+}
+
+#screen #bottom:after {
+    content:"...............";
+    position:absolute;
+    top:0;
+    right:-19px;
+    height:100%;
+    width:100%;
+    opacity:0.2;
+}*/
+
+#buttons {
+    position:relative;
+    height:498px;
+}
+
+/* BUTTONS */
+
+button {
+    margin:5px 5px 15px;
+    background:-webkit-gradient(linear,center top, center bottom, from(#6a6a6a), to(#454545));
+    -webkit-box-shadow:inset 0 0 1px 1px #5a5a5a;
+    border:none;
+    border-radius:6px;
+    position:relative;
+    width:120px;
+    height:40px;
+    color:#999;
+    font-weight:bold;
+    font-size:25px;
+    text-shadow:0 1px 3px #222;
+    font-family:"Trebuchet Ms";
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    vertical-align: top;
+}
+
+button:before {
+    content: " ";
+    display:block;
+    border:1px solid #131313;
+    position:absolute;
+    z-index:-1;
+    top:-1px;
+    left:-1px;
+    border-radius:6px;
+    width:100%;
+    height:47px;
+    -webkit-box-shadow:0 1px 0 #2f2f2f, 0 2px 5px rgba(0,0,0,0.4);
+    background:-webkit-gradient(linear,left center, right center, from(#282828), color-stop(50%,#393939), to(#282828));
+}
+
+button:after {
+    content:" ";
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    border-top:1px solid #828282;
+    border-radius:6px;
+    width:100%;
+    height:50px;
+}
+
+button:ACTIVE {
+    top:7px;
+}
+
+button:ACTIVE:BEFORE {
+    height:40px;
+}
+
+button sup {
+    vertical-align:super;
+    font-size:13px;
+}
+
+button.number, button#decimal, button#plusminus {
+    width:80px;
+}
+
+button.operator, button.paren {
+    width:60px;
+}
+
+button#equals {
+    width:134px;
+}
+
+#deg.inactive, #rad.inactive {
+    opacity:0.3;
+}
+
+img {
+    position:absolute;
+    left:30px;
+    top:30px;
+}
+
+/* SECTIONS */
+.block {
+    background:#1d1d1d;
+    position:absolute;
+    z-index:1;
+    border-radius:5px;
+    -webkit-box-shadow:0 1px 0 #444, inset 0 0 5px black;
+    padding:10px;
+}
+
+.block#commands {
+    top:35px;
+    right:30px;
+    width:426px;
+}
+
+.block#commands button {
+    width:128px!important;
+    font-size:18px;
+}
+
+.block#basic {
+    width:426px;
+    right:30px;
+    bottom:30px;
+    padding-bottom:14px;
+}
+
+.block#basic button {
+    height:54px!important;
+}
+
+.block#basic button:before {
+    height:61px!important;
+}
+
+.block#basic button:ACTIVE:BEFORE {
+    height:54px!important;
+}
+
+.block#functions {
+    left:30px;
+    bottom:30px;
+    width:469px;
+}
+
+.block#functions button {
+    width:80px!important;
+    font-size:17px;
+}

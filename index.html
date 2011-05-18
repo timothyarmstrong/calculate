@@ -1,0 +1,137 @@
+<!doctype html>    
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="author" content="TimothyArmstrong">
+
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="css.css" type="text/css" />
+    
+    <script src='expression.js'></script>
+    <script src="calculator.js"></script>
+    
+    <script>
+    
+    var calc;
+    
+    // init
+    addEventListener('DOMContentLoaded', function() {
+        
+        calc = new Calculator();
+        
+        // prevent page scrolling
+        document.body.addEventListener('touchmove', function(e) {
+            
+            e.preventDefault();
+            
+            return false;
+            
+        }, false);
+    
+    }, false);
+    
+    </script>
+    
+</head>
+
+<body>
+    <div id="calculator">
+        
+        <div id="screen">
+            <div id="top">
+                
+            </div>
+            <div id="bottom">
+                0
+            </div>
+        </div>
+        
+        <div id="buttons">
+            
+            <img src="calculate.png" />
+            
+            <section class="block" id="commands">
+                <button class="command" data-command="clear">Clear</button>
+                <button class="command" data-command="degrad"><span id="deg" class="inactive">Deg</span> | <span id="rad">Rad</span></button>
+                <button class="command" data-command="backspace">Backspace</button>
+            </section>
+            
+            <section class="block" id="functions">
+                
+                <button class="function" data-function="sin">sin</button>
+                <button class="function" data-function="cos">cos</button>
+                <button class="function" data-function="tan">tan</button>
+                <button class="constant" data-constant="pi">&pi;</button>
+                <button class="constant" data-constant="2pi">2&pi;</button>
+                <button class="function" data-function="sin_i">sin<sup>-1</sup></button>
+                <button class="function" data-function="cos_i">cos<sup>-1</sup></button>
+                <button class="function" data-function="tan_i">tan<sup>-1</sup></button>
+                <button class="operator" data-operator="choose">choose</button>
+                <button class="operator" data-operator="permute">permute</button>
+                <button class="function" data-function="square">x<sup>2</sup></button>
+                <button class="function" data-function="cube">x<sup>3</sup></button>
+                <button class="operator" data-operator="^">x<sup>y</sup></button>
+                <button class="function" data-function="inverse">x<sup>-1</sup></button>
+                <button class="function" data-function="factorial">x!</button>
+                <button class="function" data-function="sqrt">&radic;</button>
+                <button class="function" data-function="cbrt"><sup>3</sup>&radic;</button>
+                <button class="operator" data-operator="root"><sup>x</sup>&radic;</button>
+                <button class="function" data-function="log10">log</button>
+                <button class="function" data-function="ln">ln</button>
+                <button class="function" data-function="e_x">e<sup>x</sup></button>
+                <button class="function" data-function="percent">%</button>
+                <button class="operator" data-operator="mod">mod</button>
+                <button class="function" data-function="floor">floor</button>
+                <button class="function" data-function="ceil">ceil</button>
+                
+                
+            </section>
+            
+            <section class="block" id="basic">
+                
+                <div>
+                    <button class="number" data-value="7">7</button>
+                    <button class="number" data-value="8">8</button>
+                    <button class="number" data-value="9">9</button>
+                    <button class="paren" data-paren="(">(</button>
+                    <button class="paren" data-paren=")">)</button>
+                </div>
+                
+                <div>
+                    <button class="number" data-value="4">4</button>
+                    <button class="number" data-value="5">5</button>
+                    <button class="number" data-value="6">6</button>
+                    <button class="operator" data-operator="*">&#215;</button>
+                    <button class="operator" data-operator="/">&divide;</button>
+                </div>
+                
+                <div>
+                    <button class="number" data-value="1">1</button>
+                    <button class="number" data-value="2">2</button>
+                    <button class="number" data-value="3">3</button>
+                    <button class="operator" data-operator="+">+</button>
+                    <button class="operator" data-operator="-">&mdash;</button>
+                </div>
+                
+                <div>
+                    <button class="number" data-value="0">0</button>
+                    <button class="modifier" data-modifier="decimal" id="decimal">&bull;</button>
+                    <button class="modifier" data-modifier="plusminus" id="plusminus">+/&ndash;</button>
+                    <button class="command" data-command="evaluate" id="equals">=</button>
+                </div>
+                
+            </section>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
